@@ -21,7 +21,6 @@ PROJECT_ID="<your-project-id>"
 gcloud services enable container.googleapis.com --project ${PROJECT_ID}
 gcloud services enable monitoring.googleapis.com \
 cloudtrace.googleapis.com \
-clouddebugger.googleapis.com \
 cloudprofiler.googleapis.com \
 --project ${PROJECT_ID}
 ```
@@ -82,7 +81,6 @@ DATA_INGEST_TOKEN=<YOUR TOKEN VALUE>
 ```
 #### 3. Run the deployment script
 ```shell
-cd ..
 chmod 777 deployment.sh
 ./deployment.sh  --clustername "${NAME}" --dturl "${DT_TENANT_URL}" --dtingesttoken "${DATA_INGEST_TOKEN}" --dtoperatortoken "${API_TOKEN}"
 ```
@@ -110,20 +108,20 @@ Save the changes .
 First let's start with the cluster efficiency Dashboard :
 ```shell
 curl -X 'POST' \
-'https://bix24852.dev.dynatracelabs.com/api/config/v1/dashboards' \
+'${DT_TENANT_URL}/api/config/v1/dashboards' \
 -H 'accept: application/json; charset=utf-8' \
 -H 'Content-Type: application/json; charset=utf-8' \
--H 'Authorization: Api-Token ${API_TOKEN}'\
--d @dynatrace/Cluster efficiency.json'
+-H "Authorization: Api-Token ${API_TOKEN}" \
+-d @dynatrace/Cluster\ efficiency.json
 ```
 then the K6 dashboard:
 ```shell
 curl -X 'POST' \
-'https://bix24852.dev.dynatracelabs.com/api/config/v1/dashboards' \
+'${DT_TENANT_URL}/api/config/v1/dashboards' \
 -H 'accept: application/json; charset=utf-8' \
 -H 'Content-Type: application/json; charset=utf-8' \
--H 'Authorization: Api-Token ${API_TOKEN}'\
--d @dynatrace/K6 load test.json'
+-H "Authorization: Api-Token ${API_TOKEN}" \
+-d @dynatrace/K6\ load\ test.json
 ```
 
 #### b. Look at the dashboard "Cluster effiency"
