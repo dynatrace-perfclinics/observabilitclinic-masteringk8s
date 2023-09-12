@@ -21,7 +21,6 @@ PROJECT_ID="<your-project-id>"
 gcloud services enable container.googleapis.com --project ${PROJECT_ID}
 gcloud services enable monitoring.googleapis.com \
 cloudtrace.googleapis.com \
-clouddebugger.googleapis.com \
 cloudprofiler.googleapis.com \
 --project ${PROJECT_ID}
 ```
