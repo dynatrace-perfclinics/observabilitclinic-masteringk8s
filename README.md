@@ -89,7 +89,8 @@ The Cloud Provider API Token provided by default probably doesn't work in your G
 Create a new API token as described in: https://www.opencost.io/docs/configuration/gcp-opencost.
 Copy the resulting API token and apply to OpenCost.
 ```shell
-kubectl set env deployment/opencost CLOUD_PROVIDER_KEY=<new API token> -n openost
+kubectl set env deployment/opencost CLOUD_PROVIDER_KEY=<new API token> -n opencost
+kubectl rollout restart deployment/opencost -n opencost
 ```
 
 To let Dynatrace ingest the OpenCost metrics in dynatrace, we need to add the dynatrace annotations on the openCost servic/
