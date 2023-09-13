@@ -109,7 +109,7 @@ metadata:
 ```
 Save the changes .
 
-### 6. Optimize the Ressources 
+### 6. Optimize the Resources 
 
 #### a. Deploy the the Dynatrace Dashboards
 
