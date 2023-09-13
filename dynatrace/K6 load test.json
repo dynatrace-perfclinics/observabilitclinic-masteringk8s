@@ -5,7 +5,6 @@
     ],
     "clusterVersion": "1.272.0.20230707-084854"
   },
-  "id": "31975846-2c3c-4a96-844e-48ddfae92ebd",
   "dashboardMetadata": {
     "name": "K6 load test",
     "shared": false,
