@@ -116,7 +116,7 @@ Save the changes .
 First let's start with the cluster efficiency Dashboard :
 ```shell
 curl -X 'POST' \
-'${DT_TENANT_URL}/api/config/v1/dashboards' \
+"${DT_TENANT_URL}/api/config/v1/dashboards" \
 -H 'accept: application/json; charset=utf-8' \
 -H 'Content-Type: application/json; charset=utf-8' \
 -H "Authorization: Api-Token ${API_TOKEN}" \
@@ -125,7 +125,7 @@ curl -X 'POST' \
 then the K6 dashboard:
 ```shell
 curl -X 'POST' \
-'${DT_TENANT_URL}/api/config/v1/dashboards' \
+"${DT_TENANT_URL}/api/config/v1/dashboards" \
 -H 'accept: application/json; charset=utf-8' \
 -H 'Content-Type: application/json; charset=utf-8' \
 -H "Authorization: Api-Token ${API_TOKEN}" \
