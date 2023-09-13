@@ -42,7 +42,7 @@ while [ $# -gt 0 ]; do
     shift 2
      ;;
    --dturl)
-     DTURL="$2"
+     DTURL="${2%/}"
     shift 2
      ;;
   --clustername)
